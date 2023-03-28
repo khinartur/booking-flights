@@ -1,0 +1,41 @@
+/* stylelint-disable */
+
+@font-face {
+  font-family: "ArgentumSans";
+  src: url("../fonts/ArgentumSans-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ArgentumSans";
+  src: url("../fonts/ArgentumSans-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ArgentumSans";
+  src: url("../fonts/ArgentumSans-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ArgentumSans";
+  src: url("../fonts/ArgentumSans-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ArgentumSans";
+  src: url("../fonts/ArgentumSans-Black.ttf") format("ttf");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}

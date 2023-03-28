@@ -1,0 +1,22 @@
+export const vehicles = [
+  "Boeing 737",
+  "Airbus A320",
+  "Boeing 747",
+  "Airbus A380",
+  "Boeing 777",
+  "Boeing 787",
+  "Airbus A330",
+  "Embraer E-Jet",
+  "Airbus A350",
+  "Boeing 767",
+  "Boeing 757",
+  "Embraer ERJ",
+  "Bombardier CRJ",
+  "Airbus A319",
+  "Airbus A321",
+  "Boeing 737 MAX",
+  "Boeing 747-8",
+  "Boeing 737NG",
+  "Airbus A330neo",
+  "Boeing 747-400"
+];
