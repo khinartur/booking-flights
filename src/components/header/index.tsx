@@ -32,11 +32,15 @@ const Content = styled.div`
   align-items: center;
   height: 62px;
   width: 100%;
-  /* padding: 0 20px; */
+  padding: 0 80px;
   box-sizing: border-box;
-  max-width: 1140px;
+  max-width: 1300px;
   color: white;
   margin: auto;
+
+  @media (max-width: ${p => p.theme.breakpoints.laptop}) {
+    padding: 0 20px;
+  }
 `
 
 const Label = styled.div`

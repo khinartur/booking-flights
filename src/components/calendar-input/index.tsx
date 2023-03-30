@@ -39,7 +39,7 @@ export function CalendarInput({ onChoose, ...rest }: CalendarInputProps) {
 const Container = styled.div`
   display: flex;
   flex-shrink: 1;
-  min-width: 180px;
+  min-width: 150px;
 `
 
 const InputContainer = styled.div`

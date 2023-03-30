@@ -1,18 +1,20 @@
 import React from "react"
 import styled, { css } from "styled-components"
+import { UISize } from "~/theming/types"
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  uiSize?: UISize
   left?: React.ReactNode
   error?: boolean
   errorMessage?: string
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ left, error, errorMessage, ...rest }: InputProps, ref) => {
+  ({ uiSize = "lg", left, error, errorMessage, ...rest }: InputProps, ref) => {
     const hasLeft = !!left
 
     return (
-      <Container>
+      <Container size={uiSize}>
         {hasLeft && <Left children={left} />}
         <InputText ref={ref} withLeft={hasLeft} error={error} {...rest} />
       </Container>
@@ -20,11 +22,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   },
 )
 
-const Container = styled.div`
+const Container = styled.div<{ size: UISize }>`
   position: relative;
   display: flex;
   flex-grow: 1;
   height: 56px;
+
+  ${p =>
+    p.size === "md" &&
+    css`
+      height: 48px;
+    `}
 `
 
 const InputText = styled.input<{ withLeft: boolean; error?: boolean }>`
