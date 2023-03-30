@@ -5,6 +5,7 @@ import { Ticket } from "../app/domain"
 import { SearchFormState, SearchState } from "./domain"
 
 const initialState: SearchState = {
+  userCity: "",
   loading: false,
   error: undefined,
   current: undefined,
@@ -28,7 +29,11 @@ export const searchTickets = createAsyncThunk<Ticket[], SearchFormState>(
 export const searchSlice = createSlice({
   name: "search",
   initialState,
-  reducers: {},
+  reducers: {
+    setUserCity: (state, action: PayloadAction<string>) => {
+      state.userCity = action.payload
+    },
+  },
   extraReducers: builder => {
     builder.addCase(searchTickets.pending, state => {
       state.current = undefined
@@ -45,8 +50,9 @@ export const searchSlice = createSlice({
   },
 })
 
-export const {} = searchSlice.actions
+export const { setUserCity } = searchSlice.actions
 
+export const selectSearchUserCity = (state: RootState) => state.search.userCity
 export const selectSearchLoading = (state: RootState) => state.search.loading
 export const selectSearchCurrent = (state: RootState) => state.search.current
 

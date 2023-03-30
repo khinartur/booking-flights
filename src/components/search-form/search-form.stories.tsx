@@ -5,4 +5,4 @@ import { noop } from "~/core/utils/noop"
 
 const stories = storiesOf("Search form", module)
 
-stories.add("Default", () => <SearchForm onSubmit={noop} />)
+stories.add("Default", () => <SearchForm userCity="Amsterdam" onSubmit={noop} />)

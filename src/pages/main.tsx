@@ -1,15 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { Header } from "~/components/header"
 import { PopularCitiesContainer } from "~/components/popular-cities/container"
 import { SearchFormContainer } from "~/components/search-form/container"
 import { TicketsList } from "~/components/tickets-list"
-import { selectSearchCurrent, selectSearchLoading } from "~/features/search"
-import { useAppSelector } from "~/store/hooks"
+import { selectSearchCurrent, selectSearchLoading, setUserCity } from "~/features/search"
+import { useAppDispatch, useAppSelector } from "~/store/hooks"
 
 export function MainPage() {
+  const dispatch = useAppDispatch()
   const ticketsLoading = useAppSelector(selectSearchLoading)
   const tickets = useAppSelector(selectSearchCurrent)
+
+  useEffect(() => {
+    // @todo: add user location search
+    dispatch(setUserCity("Amsterdam"))
+  }, [])
 
   const caption = !tickets ? "Searching for the best results..." : `Showing ${tickets.length} results`
 

@@ -1,6 +1,7 @@
 import { Ticket } from "../app/domain"
 
 export interface SearchState {
+  userCity: string
   loading: boolean
   error: string | undefined
   current: Ticket[] | undefined

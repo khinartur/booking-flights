@@ -11,10 +11,11 @@ import { Input } from "../input"
 import { Radio } from "../radio"
 
 export type SearchFormProps = {
+  userCity: string
   onSubmit: (data: SearchFormState) => void
 }
 
-export function SearchForm({ onSubmit }: SearchFormProps) {
+export function SearchForm({ userCity, onSubmit }: SearchFormProps) {
   const [showReturnDate, setShowReturnDate] = useState(false)
 
   const isMobile = useMediaQuery(MOBILE_SCREEN_THRESHOLD)
@@ -26,7 +27,7 @@ export function SearchForm({ onSubmit }: SearchFormProps) {
     formState: { errors },
   } = useForm<SearchFormState>({
     defaultValues: {
-      from: "",
+      from: userCity,
       to: "",
       departureDate: undefined,
       returnDate: undefined,
