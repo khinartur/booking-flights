@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Image } from "~/components/image"
 import { Skeleton } from "~/components/skeleton"
 import { PopularDestination } from "~/features/app/domain"
 
@@ -24,7 +23,7 @@ export function Slide({ loading = false, destination, onClick }: SlideProps) {
 
   return (
     <Container onClick={() => onClick && onClick(city, date)}>
-      <Image src={image} height={200} radius={8} />
+      <Image src={image} />
       <Footer>
         <City children={city} />
         <Text children={`Flights from ${departureAirport}`} />
@@ -54,6 +53,14 @@ const Container = styled.div`
   color: ${p => p.theme.colors.text};
   cursor: pointer;
   margin: 0 8px;
+`
+
+const Image = styled.div<{ src: string }>`
+  height: 200px;
+  border-radius: 8px;
+  background-image: url(${p => p.src});
+  background-size: cover;
+  background-position: center;
 `
 
 const Footer = styled.div`
