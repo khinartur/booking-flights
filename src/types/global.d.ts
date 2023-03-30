@@ -8,4 +8,9 @@ declare module '*.png' {
   export default image;
 }
 
+declare module '*.jpg' {
+  const image: string;
+  export default image;
+}
+
 type Nullable<T> = T | null

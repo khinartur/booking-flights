@@ -56,7 +56,7 @@ const rules = [
       {
         loader: "url-loader",
         options: {
-          limit: 100 * 1024,
+          limit: 200 * 1024,
         },
       },
     ],

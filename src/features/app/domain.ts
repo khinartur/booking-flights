@@ -59,6 +59,16 @@ export type Ticket = {
   totalPrice: Price
 }
 
+export type TripType = "one-way" | "return"
+
+export type PopularDestination = {
+  city: string
+  image: string
+  departureAirport: string
+  date: string
+  tripType: TripType
+}
+
 export interface AppState {
   theme: ThemeKey
 }

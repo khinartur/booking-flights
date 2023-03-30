@@ -3,8 +3,9 @@ import { Image } from "../image"
 import takeoffIcon from "./assets/takeoff.svg"
 import landingIcon from "./assets/landing.svg"
 import calendarIcon from "./assets/calendar.svg"
+import chevronLeftIcon from "./assets/chevron-left.svg"
 
-export type IconType = "takeoff" | "landing" | "calendar"
+export type IconType = "takeoff" | "landing" | "calendar" | "chevron-left"
 
 export type IconProps = React.ImgHTMLAttributes<HTMLImageElement> & {
   type: IconType
@@ -22,5 +23,7 @@ function getIconByType(type: IconType) {
       return landingIcon
     case "calendar":
       return calendarIcon
+    case "chevron-left":
+      return chevronLeftIcon
   }
 }
