@@ -37,15 +37,23 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-bottom: 200px;
 `
 
 const TicketsContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
+  padding: 0 80px;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1300px;
+  box-sizing: border-box;
   margin-top: 16px;
+
+  @media (max-width: ${p => p.theme.breakpoints.laptop}) {
+    padding: 0 20px;
+    gap: 16px;
+  }
 `
 
 const PopularCitiesContent = styled.div`
@@ -62,7 +70,11 @@ const PopularCitiesContent = styled.div`
 
 const Caption = styled.span`
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 130%;
   color: ${p => p.theme.colors.text};
+
+  @media (max-width: ${p => p.theme.breakpoints.laptop}) {
+    font-size: 18px;
+  }
 `

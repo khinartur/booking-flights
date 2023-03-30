@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback } from "react"
 import styled from "styled-components"
 import { Button } from "~/components/button"
 import { MOBILE_SCREEN_THRESHOLD } from "~/core/constants"
@@ -10,13 +10,22 @@ export type FourthUnfoldedContentProps = {
 }
 
 export function FourthUnfoldedContent({ ticket }: FourthUnfoldedContentProps) {
-  const { totalPrice: { currency, value } } = ticket
+  const {
+    totalPrice: { currency, value },
+  } = ticket
 
   const isMobile = useMediaQuery(MOBILE_SCREEN_THRESHOLD)
 
-  return <Wrapper>
-    <Button size={isMobile ? "md" : "sm"} fluid children={"Buy for " + currency + value } />
-  </Wrapper>
+  const onBuyClick = useCallback((evt: React.MouseEvent) => {
+    evt.stopPropagation()
+    window.alert("Payments page is coming soon!")
+  }, [])
+
+  return (
+    <Wrapper>
+      <Button size={isMobile ? "md" : "sm"} fluid onClick={onBuyClick} children={"Buy for " + currency + value} />
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`

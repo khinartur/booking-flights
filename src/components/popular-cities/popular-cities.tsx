@@ -119,7 +119,7 @@ const Arrow = styled.div<{ flipped: boolean }>`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
   box-sizing: border-box;
   color: ${p => p.theme.colors.text};
   overflow: hidden;
